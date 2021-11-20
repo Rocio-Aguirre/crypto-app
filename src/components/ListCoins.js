@@ -1,4 +1,5 @@
 import React from 'react'
+import Table from 'react-bootstrap/Table'
 import RowCoin from './RowCoin'
 
 const columns = [
@@ -11,7 +12,7 @@ const columns = [
 const ListCoins = ({coins, search}) => {
     const filteredCoins = coins.filter(coin => coin.name.toLowerCase().includes(search.toLowerCase()) || coin.symbol.toLowerCase().includes(search.toLowerCase()));
     return (
-        <table className='table table-dark mt-4 table-hover'>
+        <Table className='table table-dark mt-4 table-hover'>
             <thead>
                 <tr>
                     {
@@ -26,7 +27,7 @@ const ListCoins = ({coins, search}) => {
                     <RowCoin coin={coin} key={i} i={i} />
                 ))}
             </tbody>
-        </table>
+        </Table>    
     )
 }
 
